@@ -3,12 +3,6 @@ Final report
 Kostas Spirliev
 19 06 2020
 
-<style>
-   img {
-    border: 2px solid #000000;
-   }
-  </style>
-
 ### Введение
 
 Работа над заданиями велась в R-studio и частично в HeidiSQL. Все отделы
