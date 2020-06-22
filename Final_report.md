@@ -3,11 +3,6 @@ Final report
 Kostas Spirliev
 19 06 2020
 
-<style>
-   img {
-    border: 2px solid #000000;
-   }
-  </style>
 
 ### Введение
 
@@ -15,7 +10,9 @@ Kostas Spirliev
 этого отчета в начале будут снабжены выполняемым заданием. Посмотрим на
 первое задание:
 
-![](analysis/images/task_1.png)
+<kbd>
+  <img src="analysis/images/task_1.png">
+</kbd>
 
 Подключаем базу данных к R, создаем ее копию для последующего
 обновления:
@@ -46,7 +43,9 @@ dbListTables(updated_data_base)
 
 ### Задание 1
 
-![](analysis/images/task_1_1.png)
+<kbd>
+  <img src="analysis/images/task_1_1.png">
+</kbd>
 
 Посмотрим на поля в prices
 
@@ -124,7 +123,9 @@ my_func("W")
 
 ### Задание 2
 
-![](analysis/images/task_2.png)
+<kbd>
+  <img src="analysis/images/task_2.png">
+</kbd>
 
 Составляем SQL-запрос для создания переменной revenue (для меня это было
 реально challengeble и очень интересно. Пару раз чуть ли не крашнулся
@@ -207,7 +208,9 @@ write(sd(revenue[revenue$product == "B",]$revenue), "results/res2.txt")
 
 ### Задание 3
 
-![](analysis/images/task_3.png)
+<kbd>
+  <img src="analysis/images/task_3.png">
+</kbd>
 
 Напишем функцию, возвращающую коэффициенты линейной регрессии: b -
 значение revenue при series = 0 в модели и k - изменение revenue
