@@ -3,6 +3,11 @@ Final report
 Kostas Spirliev
 19 06 2020
 
+<style>
+   img {
+    border: 2px solid #000000;
+   }
+  </style>
 
 ### Введение
 
@@ -10,9 +15,7 @@ Kostas Spirliev
 этого отчета в начале будут снабжены выполняемым заданием. Посмотрим на
 первое задание:
 
-<kbd>
-  <img src="analysis/images/task_1.png">
-</kbd>
+<kbd> <img src="analysis/images/task_1.png"> </kbd>
 
 Подключаем базу данных к R, создаем ее копию для последующего
 обновления:
@@ -43,9 +46,7 @@ dbListTables(updated_data_base)
 
 ### Задание 1
 
-<kbd>
-  <img src="analysis/images/task_1_1.png">
-</kbd>
+<kbd> <img src="analysis/images/task_1_1.png"> </kbd>
 
 Посмотрим на поля в prices
 
@@ -123,9 +124,7 @@ my_func("W")
 
 ### Задание 2
 
-<kbd>
-  <img src="analysis/images/task_2.png">
-</kbd>
+<kbd> <img src="analysis/images/task_2.png"> </kbd>
 
 Составляем SQL-запрос для создания переменной revenue (для меня это было
 реально challengeble и очень интересно. Пару раз чуть ли не крашнулся
@@ -208,12 +207,10 @@ write(sd(revenue[revenue$product == "B",]$revenue), "results/res2.txt")
 
 ### Задание 3
 
-<kbd>
-  <img src="analysis/images/task_3.png">
-</kbd>
+<kbd> <img src="analysis/images/task_3.png"> </kbd>
 
 Напишем функцию, возвращающую коэффициенты линейной регрессии: b -
-значение revenue при series = 0 в модели и k - изменение revenue
+значение amount при series = 0 в модели и k - изменение revenue
 при изменении series на 1 пункт. Переменная series – это ряд от 0, 1,
 2, 3 до последнего дня (от date\_start до date\_end):
 
@@ -223,7 +220,7 @@ lin_reg <- function(product, date_start, date_end) {
                             revenue$date >= date_start & revenue$date <= date_end, ]
     revenue1 <- revenue1[order(revenue1$date), ]
     revenue1$series <- 0:(nrow(revenue1) - 1)
-    result <- lm(revenue ~ series, revenue1)$coefficients
+    result <- lm(amount ~ series, revenue1)$coefficients
     names(result) <- c("b", "k")
     rev(result)
 }
@@ -236,7 +233,7 @@ lin_reg(product='Q', date_start='2019-01-01', date_end='2019-03-31')
 ```
 
     ##          k          b 
-    ##  -42.57668 7120.80683
+    ## -0.1756102 29.3702076
 
 Записываем результат:
 
